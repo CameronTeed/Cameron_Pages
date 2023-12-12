@@ -21,6 +21,19 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+button {
+    display: block;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -44,4 +57,10 @@ footer {
 
 .project-link:hover {
     background-color: #ccc;
+}
+
+strong a {
+    color: #007BFF; /* Set the link color to blue */
+    text-decoration: underline; /* Underline the link */
+    font-weight: bold; /* Make the link text bold */
 }
