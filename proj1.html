@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Computer Science Project</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Todo List - Collaborative Todo List App</h1>
+        <p>Express-Based Server with MongoDB and Handlebars</p>
+    </header>
+
+    <section>
+        <bold><a href="https://camteed.com/">https://camteed.com/</a> </bold>
+        <h2>About the Project</h2>
+        <p>
+            Built with Express.js, MongoDB, and Handlebars, this project is a dynamic website that allows users to create and manage to-do lists. Users can create an account, log in, and create to-do lists. To-do lists can be shared with other users, and users can collaborate on shared to-do lists.
+        </p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Template Rendering</li>
+            <li>Database Management using MongoDB</li>
+            <li>Secure Storage of Password using hashing and salting</li>
+            <li>HTML/CSS/JavaScript</li>
+            <li>Express.js</li>
+            <li>Authentication and Authorization</li>
+            <li>Azure Hosting</li>
+        </ul>
+
+        <h2>Secure Password Storage</h2>
+        <Pr>
+            Passwords are stored securely using hashing and salting. The password is hashed using bcrypt, and the salt is stored in the database. When a user logs in, the salt is retrieved from the database and used to hash the password entered by the user. The hashed password is then compared to the hashed password stored in the database. If the two hashes match, the user is authenticated.
+
+        </Pr>
+
+        <h2>Authentication and Authorization</h2>
+        <pr>
+            Authentication and authorization are handled using express-session. When a user logs in, a session is created and stored in the database. The session is then used to authenticate the user. If the user is authenticated, the session is used to authorize the user to access certain pages. For example, if a user is not logged in, they cannot access the to-do list page. If a user is logged in, they can access the to-do list page. If a user is logged in and is the owner of a to-do list, they can access the edit page for that to-do list. If a user is logged in and is not the owner of a to-do list, they can access the view page for that to-do list.
+
+        </pr>
+
+        <h2>Middleware</h2>
+        <pr>    
+            Middleware is used to check if a user is logged in and authorized to access certain pages. If a user is not logged in, they are redirected to the login page. If a user is logged in, they are redirected to the to-do list page. If a user is logged in and is the owner of a to-do list, they are redirected to the edit page for that to-do list. If a user is logged in and is not the owner of a to-do list, they are redirected to the view page for that to-do list.
+
+        </pr>
+
+        <h2>Template Rendering</h2>
+        <pr>
+            Template rendering is used to render the pages for the website. The pages are rendered using handlebars.
+
+        </pr>
+
+        <h2>Server Hosting</h2>
+        <pr>
+            This website is hosted using Azure Web App Service, and the database is hosted on MongoDB Atlas.
+
+        </pr>
+
+        <h2>Database Design</h2>
+        <pr>Part of the backend of this project is the database design. Created with MongoDB, there are two collections: users and lists. </pr>
+        <pre>
+        <code>
+        id: 6571220b48e8f881470e4523
+        userName: "cameronteed"
+        password: "$2a$10$MXEtDuIAQjqby8gUVPDQNO9DJdwmcN3.4msoIKhkzTXHpJGowsj1m"
+        level: "admin"
+        email: "cameron.teed@live.com"
+        
+        pools: [
+            {
+                poolID: 6573dbec8ba7fc5194e3dad9,
+                poolName: "Hello!"
+            }
+        ]
+        
+        id: 6573c6f1b6d016deae905c9e
+        poolName: "Home"
+
+        Messages:
+        Array (1)
+            0:
+                Object:
+                    toDo: "Fix Faucet"
+                    state: "Completed"
+                    status: "Urgent"
+                    mID: 6573c6e0b6d016deae905c9d
+                    _id: 6573c702b6d016deae905c9f
+
+        Emails:
+        Array (1)
+            0: "cameron.teed@live.com"
+        </code>
+        </pre>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Project Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
