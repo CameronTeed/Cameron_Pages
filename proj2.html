@@ -37,7 +37,7 @@
         </ul>
         <h2>How it works</h2> 
         <Pr>
-           blah blah blah 
+           Uses the linux socket library to capture packets, and outputs them to a file. The application is run from the command line, and takes in a duration of time to capture packets for, and an output file name.
         </Pr> 
         
         <h2>Project Structure</h2>
@@ -47,12 +47,12 @@
         </Pr>
         <h2>Analyzing Packets</h2>
         <Pr>
-           blah blah blah
+           In order to capture packets, and output them to a file, we must understand how packets are structured. For IPv4 packets are made up of a header, a payload, and sometime a trailer. The header contains information about the packet, such as the source and destination IP address, and the payload contains the data being sent.
           
         </Pr>
         <h2>Testing</h2>
         <Pr>
-           blah blah blah
+           Unit tests were conducted using google test (gtest), integration and functional tests were conducted using python, where data packets were broadcasted and searched for in the output file created by the network analyzer. Valgrind was used to ensure there were no memory leaks. 
           
         </Pr>
         
