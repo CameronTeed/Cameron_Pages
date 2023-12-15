@@ -35,16 +35,12 @@
             <li>OOP</li>
             <li>Sockets</li>
         </ul>
+
         <h2>How it works</h2> 
         <Pr>
            Uses the linux socket library to capture packets, and outputs them to a file. The application is run from the command line, and takes in a duration of time to capture packets for, and an output file name.
         </Pr> 
-        
-        <h2>Project Structure</h2>
-        <Pr>
-            The project is organized into modular components, following best practices for C++ development. Key functionalities are encapsulated using object-oriented programming (OOP) principles, promoting code reusability and maintainability.
-            Version control is implemented with Git, ensuring a systematic approach to project management and collaboration.
-        </Pr>
+
         <h2>Analyzing Packets</h2>
         <Pr>
            In order to capture packets, and output them to a file, we must understand how packets are structured. For IPv4 packets are made up of a header, a payload, and sometime a trailer. The header contains information about the packet, such as the source and destination IP address, and the payload contains the data being sent.
@@ -55,6 +51,11 @@
            Unit tests were conducted using google test (gtest), integration and functional tests were conducted using python, where data packets were broadcasted and searched for in the output file created by the network analyzer. Valgrind was used to ensure there were no memory leaks. 
           
         </Pr>
+
+        <h2>Optimizing Performance</h2>
+        <p>
+            The application focuses on optimizing performance in capturing and processing network packets. Techniques such as efficient memory handling and low-level socket programming contribute to the overall speed and reliability of the network analyzer.
+        </p>
         
         
     </section>
