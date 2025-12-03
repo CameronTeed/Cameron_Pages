@@ -17,8 +17,7 @@
     <button onclick="location.href='./index.html'">Go Back</button>
 
     <section>
-        <h2>Project Demo: <strong><a target=”_blank” href="https://youtube.com/">Coming Soon</a> </strong></h2>
-        <h2>Source Code: <strong><a target=”_blank” href="https://github.com/CameronTeed/network_analyzer">https://github.com/CameronTeed/network_analyzer</a> </strong></h2>
+        <h2>Source Code: <strong><a target="_blank" href="https://github.com/CameronTeed/network_analyzer">https://github.com/CameronTeed/network_analyzer</a> </strong></h2>
         <h2>About the Project</h2>
         <p>
             Built with C++ on the G++ compiler for linux. This aplication outputs captured network packets for a set duration of time to a txt file. 
@@ -38,29 +37,29 @@
         </ul>
 
         <h2>How it works</h2> 
-        <Pr>
+        <p>
            Uses the linux socket library to capture packets, and outputs them to a file. The application is run from the command line, and takes in a duration of time to capture packets for. 
-        </Pr> 
+        </p> 
 
         <h2>Design</h2> 
-        <Pr>
+        <p>
             The apllication is designed using the MVC design pattern. The model is the socket and frame proccessing, the view is the output file, and the controller controls the view and model.
-        </Pr>
+        </p>
         <h2>Analyzing Packets</h2>
-        <Pr>
+        <p>
            In order to capture packets, and output them to a file, we must understand how packets are structured. Packets are made up of an ethernet header, an ip header, a protocol header, a payload, and sometime a trailer. The headers contains information about the packet, such as the source and destination IP address, and the payload contains the data being sent.
           
-        </Pr>
+        </p>
         <h2>Sockets</h2>
-        <Pr>
+        <p>
             A raw socket setup to capture all data was created. The data is then extracted from the packet using the included files which contain the needed structs to extract the bits.
           
-        </Pr>
+        </p>
         <h2>Testing</h2>
-        <Pr>
+        <p>
            Unit tests were conducted using google test (gtest), integration and functional tests were conducted using python, where data packets were broadcasted and searched for in the output file created by the network analyzer. Valgrind was used to ensure there were no memory leaks. 
           
-        </Pr>
+        </p>
 
         <h2>Optimizing Performance</h2>
         <p>

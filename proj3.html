@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Date Ideas Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>AI Date Ideas Platform</h1>
+        <p>Next.js Frontend • Java Core • Python AI Orchestrator</p>
+    </header>
+
+    <button onclick="location.href='./index.html'">Go Back</button>
+
+    <section>
+        <h2>Project Demo: <strong><a target="_blank" href="https://ottawadateideas.ca/">https://ottawadateideas.ca/</a> </strong></h2>
+        <h2>Source Code: <strong><a target="_blank" href="https://github.com/CameronTeed/AI-API">https://github.com/CameronTeed/AI-API</a> </strong></h2>
+        <h2>About the Project</h2>
+        <p>
+            This platform is an intelligent date planning assistant that generates personalized itineraries. It uses a microservices architecture where a Next.js frontend communicates with a Java backend for business logic, which in turn leverages a Python service for AI orchestration. The system combines vector search with real-time data verification to ensure date ideas are creative, relevant, and actually open for business.
+        </p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Microservices Architecture (Java & Python)</li>
+            <li>Hybrid Vector Search (pgvector)</li>
+            <li>AI-Powered Itinerary Generation (OpenAI)</li>
+            <li>Real-time Venue Verification (Google Maps & Scraping)</li>
+            <li>High-Performance gRPC Communication</li>
+            <li>Next.js Server-Side Rendering</li>
+            <li>PostgreSQL with Geospatial Support</li>
+        </ul>
+
+        <h2>Hybrid Vector Search</h2>
+        <p>
+            The system implements a sophisticated search strategy using PostgreSQL with the <code>pgvector</code> extension. It combines semantic similarity (vector embeddings of venue descriptions) with traditional relational filters (price, location, opening hours). This allows users to ask vague questions like "cozy spot for a rainy day" and get results that match the <em>vibe</em> while strictly adhering to their budget and location constraints.
+        </p>
+
+        <h2>Microservices Architecture</h2>
+        <p>
+            The backend is split into two specialized services. The <strong>Java Service</strong> handles user authentication, profile management, and API gateway duties. The <strong>Python Orchestrator</strong> focuses purely on AI tasks: managing the vector store, interfacing with LLMs, and running web scrapers. They communicate via <strong>gRPC</strong> using Protocol Buffers, ensuring type-safe and low-latency data exchange.
+        </p>
+
+        <h2>AI Orchestration & Verification</h2>
+        <p>    
+            Raw AI hallucinations are prevented by a multi-step verification process. When the LLM suggests a venue, the Python service uses <strong>Google Maps API</strong> and <strong>Web Scraping</strong> (BeautifulSoup/ScrapingBee) to verify the venue exists, is currently open, and matches the description. Only verified venues are presented to the user.
+        </p>
+
+        <h2>Frontend Experience</h2>
+        <p>
+            The user interface is built with <strong>Next.js</strong>, utilizing Server Components for optimal performance and SEO. It features an interactive chat interface that maintains context across the session, allowing users to refine their plans iteratively (e.g., "make it cheaper" or "somewhere closer to downtown").
+        </p>
+
+        <h2>Server Hosting</h2>
+        <p>
+            The microservices are containerized using Docker. The database is a managed PostgreSQL instance with the <code>vector</code> extension enabled.
+        </p>
+
+        <h2>Database Design</h2>
+        <p>The database schema is designed for hybrid search, storing both structured venue data and high-dimensional vector embeddings in the same PostgreSQL tables.</p>
+        <pre>
+        <code>
+        -- Event Table (Hybrid Data)
+        Table: event
+        {
+            event_id: INTEGER (PK),
+            title: VARCHAR(255),
+            description: TEXT,
+            price: DECIMAL(10,2),
+            embedding: vector(384),  -- Semantic Vector
+            location_id: INTEGER (FK),
+            is_ai_recommended: BOOLEAN,
+            ai_score: DECIMAL(5,2),
+            modified_time: TIMESTAMP
+        }
+
+        -- Location Table (Geospatial)
+        Table: location
+        {
+            location_id: INTEGER (PK),
+            name: VARCHAR(255),
+            city: TEXT,
+            lat: REAL,
+            lon: REAL,
+            address: TEXT
+        }
+
+        -- Search Function (SQL + Vector)
+        SELECT 
+            title, 
+            (1 - (embedding <=> query_embedding)) AS similarity
+        FROM event
+        WHERE 
+            price <= 75 
+            AND city = 'New York'
+            AND (1 - (embedding <=> query_embedding)) > 0.7
+        ORDER BY similarity DESC;
+        </code>
+        </pre>
+    </section>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="footer-icon" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="footer-icon" title="Github Profile"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 Cameron Teed. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

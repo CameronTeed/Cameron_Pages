@@ -17,8 +17,8 @@
     <button onclick="goBack()">Go Back</button>
 
     <section>
-        <h2>Project Demo: <strong><a target=”_blank” href="https://camteed.com/">https://camteed.com/</a> </strong></h2>
-        <h2>Source Code: <strong><a target=”_blank” href="https://github.com/CameronTeed/Todo_Project">https://github.com/CameronTeed/Todo_Project</a> </strong></h2>
+        <h2>Project Demo: <strong><a target="_blank" href="https://camteed.com/">https://camteed.com/</a> </strong></h2>
+        <h2>Source Code: <strong><a target="_blank" href="https://github.com/CameronTeed/Todo_Project">https://github.com/CameronTeed/Todo_Project</a> </strong></h2>
         <h2>About the Project</h2>
         <p>
             Built with Express.js, MongoDB, and Handlebars, this project is a dynamic website that allows users to create and manage to-do lists. Users can create an account, log in, and create to-do lists. To-do lists can be shared with other users, and users can collaborate on shared to-do lists.
@@ -36,42 +36,42 @@
         </ul>
 
         <h2>Secure Password Storage</h2>
-        <Pr>
+        <p>
             Passwords are stored securely using hashing and salting. The password is hashed using bcrypt, and the salt is stored in the database. When a user logs in, the salt is retrieved from the database and used to hash the password entered by the user. The hashed password is then compared to the hashed password stored in the database. If the two hashes match, the user is authenticated.
 
-        </Pr>
+        </p>
 
         <h2>Authentication and Authorization</h2>
-        <pr>
+        <p>
             Authentication and authorization are handled using express-session. When a user logs in, a session is created and stored in the database. The session is then used to authenticate the user. If the user is authenticated, the session is used to authorize the user to access certain pages. For example, if a user is not logged in, they cannot access the to-do list page. If a user is logged in, they can access the to-do list page. If a user is logged in and is the owner of a to-do list, they can access the edit page for that to-do list. If a user is logged in and is not the owner of a to-do list, they can access the view page for that to-do list.
 
-        </pr>
+        </p>
 
         <h2>Middleware</h2>
-        <pr>    
+        <p>    
             Middleware is used to check if a user is logged in and authorized to access certain pages. If a user is not logged in, they are redirected to the login page. If a user is logged in, they are redirected to the to-do list page. If a user is logged in and is the owner of a to-do list, they are redirected to the edit page for that to-do list. If a user is logged in and is not the owner of a to-do list, they are redirected to the view page for that to-do list.
 
-        </pr>
+        </p>
 
         <h2>Template Rendering</h2>
-        <pr>
+        <p>
             Template rendering is used to render the pages for the website. The pages are rendered using handlebars.
 
-        </pr>
+        </p>
 
         <h2>Server Hosting</h2>
-        <pr>
+        <p>
             This website is hosted using Azure Web App Service, and the database is hosted on MongoDB Atlas.
 
-        </pr>
+        </p>
 
         <h2>Email Notifications</h2>
-        <Pr>
+        <p>
             Using the Mailjet API, when a new to do message is created, it sends an email notifying the users of the to do list that a new message has been created.
-        </Pr>
+        </p>
 
         <h2>Database Design</h2>
-        <pr>Part of the backend of this project is the database design. Created with MongoDB, there are two collections: users and lists. </pr>
+        <p>Part of the backend of this project is the database design. Created with MongoDB, there are two collections: users and lists. </p>
         <pre>
         <code>
         id: 6571220b48e8f881470e4523
